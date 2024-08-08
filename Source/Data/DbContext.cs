@@ -42,7 +42,7 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbCont
                 Title = $"Todo Item {i}",
                 IsCompleted = false,
                 CreatedOn = DateTime.UtcNow,
-                UserId = 1
+                UserId = Guid.NewGuid(),
             });
         }
     }
