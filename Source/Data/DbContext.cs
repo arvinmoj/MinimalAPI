@@ -23,7 +23,7 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbCont
 
             modelBuilder.Entity<User>().HasData(new User
             {
-                Id = Guid.NewGuid(),
+                Id = i,
                 Username = $"user{i}",
                 Password = hashed,
                 Email = $"user{i}@example.com",
@@ -38,11 +38,11 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbCont
         {
             modelBuilder.Entity<TodoItem>().HasData(new TodoItem
             {
-                Id = Guid.NewGuid(),
+                Id = i,
                 Title = $"Todo Item {i}",
                 IsCompleted = false,
                 CreatedOn = DateTime.UtcNow,
-                UserId = Guid.NewGuid(),
+                UserId = i,
             });
         }
     }
