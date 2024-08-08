@@ -8,5 +8,5 @@ public class TodoItem : Base.Entity
     public string? Title { get; set; }
     public bool IsCompleted { get; set; }
     public User User { get; set; } = null!;
-    public int UserId { get; set; }
+    public Guid UserId { get; set; }
 }
